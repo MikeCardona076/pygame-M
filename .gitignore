@@ -1,0 +1,37 @@
+# Entornos virtuales
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Herramientas de desarrollo y pruebas
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Distribuciones y paquetes
+build/
+dist/
+*.egg-info/
+
+# Configuración local y secretos
+.env
+.env.*
+!.env.example
+
+# Datos generados durante la ejecución
+*.db
+*.sqlite
+*.sqlite3
+
+# Editores y sistema operativo
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

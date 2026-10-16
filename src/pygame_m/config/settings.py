@@ -1,0 +1,11 @@
+"""Valores generales de la ventana y la interfaz."""
+
+WINDOW_WIDTH = 960
+WINDOW_HEIGHT = 540
+TARGET_FPS = 60
+WINDOW_TITLE = "Pygame-M"
+
+BACKGROUND_COLOR = (13, 18, 35)
+ACCENT_COLOR = (97, 218, 251)
+PRIMARY_TEXT_COLOR = (245, 247, 255)
+SECONDARY_TEXT_COLOR = (165, 176, 200)
