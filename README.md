@@ -6,9 +6,9 @@ la API `pygame` y con Python 3.14.
 
 ## Estado
 
-La estructura inicial ya es ejecutable. Al iniciarlo se abre una ventana de
-bienvenida con el texto **Pygame-M**. El proyecto todavía no incluye niveles,
-jugador ni mecánicas de juego.
+El ejemplo interactivo ya es ejecutable: desde el menú puedes abrir una escena
+para incrementar o decrementar un contador y guardar su valor en una pantalla de
+resultado. Presiona **Esc** para volver a la escena anterior.
 
 ## Estructura
 
@@ -22,6 +22,11 @@ pygame-M/
 │       ├── core/game.py
 │       ├── scenes/base_scene.py
 │       ├── scenes/welcome_scene.py
+│       ├── scenes/menu_scene.py
+│       ├── scenes/interaction_scene.py
+│       └── scenes/result_scene.py
+│       ├── components/ui_button.py
+│       ├── components/ui_label.py
 │       └── __main__.py
 ├── tests/
 │   └── test_welcome_scene.py
@@ -60,12 +65,12 @@ python -m pip install -e .
 python -m pygame_m
 ```
 
-Cierra la ventana o presiona **Esc** para salir.
+Cierra la ventana o presiona **Esc** para volver al menú/salir.
 
 ## Comandos básicos
 
 ```bash
-python -m pygame_m          # Iniciar la pantalla de bienvenida
+python -m pygame_m          # Iniciar el ejemplo interactivo
 python -m pygame_m --help   # Ver los comandos disponibles
 python -m pygame_m --version
 ```
@@ -79,8 +84,7 @@ python -m unittest discover -s tests
 ## Próximos pasos
 
 1. Añadir movimiento del jugador y manejo de entrada.
-2. Crear escenas de menú y juego.
-3. Incorporar recursos y ejemplos cuando sean necesarios.
+2. Incorporar recursos cuando sean necesarios.
 
 La arquitectura y las responsabilidades de cada módulo están explicadas en
 [docs/arquitectura.md](docs/arquitectura.md).

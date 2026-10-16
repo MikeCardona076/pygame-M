@@ -8,12 +8,16 @@ from pygame_m.scenes.base_scene import BaseScene
 
 class WelcomeScene(BaseScene):
     def __init__(self) -> None:
+        super().__init__()
         self.title_font = pygame.font.Font(None, 88)
         self.subtitle_font = pygame.font.Font(None, 32)
         self.hint_font = pygame.font.Font(None, 24)
 
-    def handle_event(self, _event: pygame.event.Event) -> None:
-        del _event
+    def handle_event(self, event: pygame.event.Event) -> None:
+        if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
+            if self.game is None:
+                raise RuntimeError("La escena de bienvenida no está vinculada al juego.")
+            self.game.running = False
 
     def update(self, _delta_time: float) -> None:
         del _delta_time

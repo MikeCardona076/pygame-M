@@ -17,6 +17,7 @@ class Game:
         pygame.display.set_caption(settings.WINDOW_TITLE)
         self.clock = pygame.time.Clock()
         self.scene = initial_scene()
+        self.scene.game = self
         self.running = True
 
     def run(self) -> None:
@@ -33,9 +34,16 @@ class Game:
 
     def _handle_events(self) -> None:
         for event in pygame.event.get():
-            if event.type == pygame.QUIT or (
-                event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE
-            ):
+            if event.type == pygame.QUIT:
                 self.running = False
             else:
                 self.scene.handle_event(event)
+
+
+    def change_scene(self, new_scene) -> None:
+        """Transición segura entre escenas."""
+        if hasattr(self.scene, 'on_exit'):
+            self.scene.on_exit()
+        self.scene = new_scene
+        if hasattr(self.scene, 'on_enter'):
+            self.scene.on_enter()
